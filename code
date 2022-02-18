@@ -1,0 +1,21 @@
+if __name__ == '__main__':
+    records=[]
+    new_scores=[]
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        new_scores.append(score)
+        records.append([score,name])
+def low_sc(records):
+    records.sort(key = lambda x: x[0])
+    return records
+low_sc= low_sc(records)
+scores= sorted(set(list(new_scores)))
+scores = scores[1]
+new_sc=[]
+for i in range(0,len(records)):
+    if scores == records[i][0]:
+        new_sc.append(records[i][1])
+new_sc.sort()
+for item in new_sc:
+    print(item)
